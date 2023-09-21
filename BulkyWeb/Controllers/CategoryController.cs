@@ -1,5 +1,6 @@
-﻿using BulkyWeb.Data;
-using BulkyWeb.Models;
+﻿
+using Bulky.DataAccess.Data;
+using Bulky.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyWeb.Controllers
@@ -47,7 +48,7 @@ namespace BulkyWeb.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _db.Categories.Find(id);
+            Category ? categoryFromDb = _db.Categories.Find(id);
             Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             Category? categoryFromDb2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
 
